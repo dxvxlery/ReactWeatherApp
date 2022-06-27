@@ -14,7 +14,7 @@ const WeatherLayout: React.FC = () => {
     const country = useRef<HTMLInputElement | null>(null);
 
     const getData = async (city?: string) => {
-        const response = await axios.get(`http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_KEY}&q=${city}&aqi=no`);
+        const response = await axios.get(`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_KEY}&q=${city}&aqi=no`);
         setCurrent(response.data.current)
         setLocation(response.data.location)
         setConditions(response.data.current.condition)
